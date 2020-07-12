@@ -238,9 +238,13 @@
 
 // Enable CNC Menu mutually exclusive to UNIFIED_MENU
 #define CNC_MENU
+#define Z_PROBE // if using a Z probe or touch plate.  Set Z_PROBE_OFFSET off set in MM
 
 #ifdef CNC_MENU
   //#define CNC_LASER // Enable Laser Interface instead of Fan Interface
+  #ifdef Z_PROBE
+    #define Z_PROBE_OFFSET 0.5 // define the touch plate thickness in mm
+  #endif
 #endif
 
 

@@ -43,7 +43,9 @@ void menuHome(void)
           break;
         case KEY_ICON_1:
           storeCmd("G28 Z\n");
-          storeCmd("G92 Z0.5\n");
+          #ifdef Z_PROBE_OFFSET  
+            storeCmd("G92 Z%.3f\n", Z_PROBE_OFFSET);
+          #endif  
           break;
         case KEY_ICON_4:
           storeCmd("G92 X0\n");
