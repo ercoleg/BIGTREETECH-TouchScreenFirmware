@@ -177,8 +177,8 @@
 #define X_MIN_POS 0
 #define Y_MIN_POS 0
 #define Z_MIN_POS 0
-#define X_MAX_POS 480 // LOK mod MPCNC Size
-#define Y_MAX_POS 480 // LOK mod MPCNC Size
+#define X_MAX_POS 450 // LOK mod MPCNC Size
+#define Y_MAX_POS 450 // LOK mod MPCNC Size
 #define Z_MAX_POS 80 // LOK mod MPCNC Size
 
 // Specify a pause position as { X, Y, Z_raise }
