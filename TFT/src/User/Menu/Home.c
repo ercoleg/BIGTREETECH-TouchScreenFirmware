@@ -38,11 +38,24 @@ void menuHome(void)
     switch(key_num)
     {
     	#ifdef CNC_MENU //if CNC menu is selected
-        case KEY_ICON_0: storeCmd("G28 XY\n");   break;
-        case KEY_ICON_1: storeCmd("G28 Z\n"); break;
-        case KEY_ICON_4: storeCmd("G92 X0\n"); break;
-        case KEY_ICON_5: storeCmd("G92 Y0\n"); break;
-        case KEY_ICON_6: storeCmd("G92 Z0\n"); break;
+        case KEY_ICON_0:
+          storeCmd("G28 XY\n");
+          break;
+        case KEY_ICON_1:
+          storeCmd("G28 Z\n");
+          #ifdef Z_PROBE_OFFSET  
+            storeCmd("G92 Z%.3f\n", Z_PROBE_OFFSET);
+          #endif  
+          break;
+        case KEY_ICON_4:
+          storeCmd("G92 X0\n");
+          break;
+        case KEY_ICON_5:
+          storeCmd("G92 Y0\n");
+          break;
+        case KEY_ICON_6:
+          storeCmd("G92 Z0\n");
+          break;
       #else
         case KEY_ICON_0: storeCmd("G28\n");   break;
         case KEY_ICON_1: storeCmd("G28 X\n"); break;
